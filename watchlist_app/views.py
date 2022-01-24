@@ -5,6 +5,7 @@ from django.shortcuts import render
 from watchlist_app.models import Movie
 
 
+# In Both API we added to much manual code in endpoints, so in next commit (C4) we used django rest framework.
 def movie_list(request):
     movies = list(Movie.objects.values())
     return JsonResponse({"Movies": movies}, status=200)
