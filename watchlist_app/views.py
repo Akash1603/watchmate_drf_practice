@@ -13,6 +13,7 @@ def movie_list(request):
 
 def movie_detail(request, pk):
     movie = Movie.objects.get(pk=pk)
-    return JsonResponse({"name": movie.name,
+    return JsonResponse({"id": movie.id,
+                         "name": movie.name,
                          "description": movie.description,
                          "active": movie.active}, status=200)
